@@ -45,11 +45,11 @@ module Rubiety
         
         meta_data_columns.each do |field|
           define_method(field.to_sym) do
-            meta.send(field.to_sym) if has_meta?
+            meta.send(field.to_sym) if has_meta_data?
           end
-
+          
           define_method("#{field}=".to_sym) do |value|
-            self.meta.build unless has_meta?
+            self.build_meta unless has_meta_data?
             meta.send("#{field}=".to_sym, value)
           end
         end
@@ -61,7 +61,7 @@ module Rubiety
     end
     
     module InstanceMethods
-      def has_meta?
+      def has_meta_data?
         !self.meta.nil?
       end
     end
