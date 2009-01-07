@@ -2,6 +2,8 @@
 
 This plugin allows you to extend one of your models with additional supplementary data stored in another table through a has_one relationship.  The benefit of this plugin over a simple has_one is that the meta model class is dynamically defined (though extendable via the has_meta_data declaration) and fields on the meta model are automatically delegated to from the main model, allowing you to work solely with your primary model and not worry about the storage of the data in a separate meta table.  This plugin also automatically handles creation of the meta model if you set a field on your model that exists in the meta model table.  
 
+Common use cases for this are database efficiency if only a small number of your records have a certain set of data or in conjunction with STI to accomplish something akin to Class Table Inheritance (CTI).
+
 In short, it's a transparent way of splitting up data into two tables while still treating them as one model.  
 
 == Basic Example
