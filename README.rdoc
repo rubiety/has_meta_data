@@ -1,6 +1,8 @@
 == Has Meta Data
 
-This plugin allows you to extend one of your models with additional supplementary data stored in another table through a has_one relationship.  In particular, the benefit of this plugin over a simple has_one is that the meta model class is dynamically defined (though extendable via the has_meta_data declaration) and fields on the meta model are automatically delegated from the main model, allowing you to work soley with your primary model and not worry about the storage of the data into a separate meta table.  This plugin also automatically handles creation of the meta model if you set a field on your model that exists in the meta model table.  In short, it's a transparent way of splitting up data into two tables but still treating them as one model.  
+This plugin allows you to extend one of your models with additional supplementary data stored in another table through a has_one relationship.  The benefit of this plugin over a simple has_one is that the meta model class is dynamically defined (though extendable via the has_meta_data declaration) and fields on the meta model are automatically delegated to from the main model, allowing you to work solely with your primary model and not worry about the storage of the data in a separate meta table.  This plugin also automatically handles creation of the meta model if you set a field on your model that exists in the meta model table.  
+
+In short, it's a transparent way of splitting up data into two tables while still treating them as one model.  
 
 == Basic Example
 
@@ -53,3 +55,21 @@ You can control the name of the meta class, foreign key, and table name not unli
                   :table_name => 'news_article_additional_data'
   end
 
+
+== Extending the Meta Data Class
+
+Because you don't directly define the meta data class, you can specify a block of code to be run in its
+context by passing a block to has_draft:
+  
+  class Article < ActiveRecord::Base
+    belongs_to :user
+    
+    has_meta_data do
+      belongs_to :some_author
+      
+      def do_something
+        # Something
+      end
+    end
+    
+  end
