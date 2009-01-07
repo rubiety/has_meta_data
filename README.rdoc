@@ -1,0 +1,55 @@
+== Has Meta Data
+
+This plugin allows you to extend one of your models with additional supplementary data stored in another table through a has_one relationship.  In particular, the benefit of this plugin over a simple has_one is that the meta model class is dynamically defined (though extendable via the has_meta_data declaration) and fields on the meta model are automatically delegated from the main model, allowing you to work soley with your primary model and not worry about the storage of the data into a separate meta table.  This plugin also automatically handles creation of the meta model if you set a field on your model that exists in the meta model table.  In short, it's a transparent way of splitting up data into two tables but still treating them as one model.  
+
+== Basic Example
+
+  ## Database Schema
+  create_table :articles, :force => true do |t|
+    t.string :title
+    t.text :body
+  end
+  
+  create_table :article_meta, :force => true do |t|
+    t.references :article
+    t.string :reference_link
+    t.text :reference_note
+  end
+  
+  ## Model
+  class Article < ActiveRecord::Base
+    has_meta_data
+  end
+  
+  ## Exposed Class Methods & Scopes:
+  Article.meta_data_class
+  => Article::Meta
+  Article.with_meta_data.all
+  => (Articles that have associated meta data)
+  Article.without_meta_data.all
+  => (Articles with no associated meta data)
+  
+  ## Usage Examples:
+  
+  article = Article.create(:title => 'Title', :body => 'Body')
+  article.has_meta_data?  # => false
+  
+  article.reference_link = 'http://benhughes.name/'
+  article.has_meta_data?  # => true
+  article.meta
+  # => #<Article::Meta reference_link: "http://benhughes.name/", reference_note: nil>
+  
+  article = Article.create(:title => 'Title', :body => 'Body', :reference_link => 'http://benhughes.name/')
+  article.has_meta_data?  # => true
+  article.reference_link  # => "http://benhughes.name/"
+
+== Changing the Defaults
+
+You can control the name of the meta class, foreign key, and table name not unlike ActiveRecord associations:
+
+  class Article < ActiveRecord::Base
+    has_meta_data :class_name => 'AdditionalData', 
+                  :foreign_key => 'news_article_id',
+                  :table_name => 'news_article_additional_data'
+  end
+
