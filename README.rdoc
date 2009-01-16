@@ -6,6 +6,11 @@ Common use cases for this are database efficiency if only a small number of your
 
 In short, it's a transparent way of splitting up data into two tables while still treating them as one model.  
 
+== Installation
+  
+  # In environment.rb:
+  config.gem 'railsgarden-has_meta_data', :lib => 'has_meta_data', :source => 'http://gems.github.com'
+
 == Basic Example
 
   ## Database Schema

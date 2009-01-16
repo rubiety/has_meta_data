@@ -1,0 +1,16 @@
+CHANGELOG
+has_meta_data_plugin.sqlite3
+init.rb
+install.rb
+lib/has_meta_data.rb
+Manifest
+MIT-LICENSE
+Rakefile
+README.rdoc
+tasks/has_meta_data_tasks.rake
+test/config/database.yml
+test/has_meta_data_test.rb
+test/models/article.rb
+test/schema.rb
+test/test_helper.rb
+uninstall.rb
