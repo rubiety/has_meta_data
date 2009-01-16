@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = %q{Create one model backed by a primary table and a supplementary 'meta' table.}
   s.email = %q{ben@railsgarden.com}
   s.extra_rdoc_files = ["CHANGELOG", "lib/has_meta_data.rb", "README.rdoc", "tasks/has_meta_data_tasks.rake"]
-  s.files = ["CHANGELOG", "has_meta_data_plugin.sqlite3", "init.rb", "install.rb", "lib/has_meta_data.rb", "Manifest", "MIT-LICENSE", "Rakefile", "README.rdoc", "tasks/has_meta_data_tasks.rake", "test/config/database.yml", "test/has_meta_data_test.rb", "test/models/article.rb", "test/schema.rb", "test/test_helper.rb", "uninstall.rb", "has_meta_data.gemspec"]
+  s.files = ["CHANGELOG", "has_meta_data.gemspec", "init.rb", "install.rb", "lib/has_meta_data.rb", "Manifest", "MIT-LICENSE", "Rakefile", "README.rdoc", "tasks/has_meta_data_tasks.rake", "test/config/database.yml", "test/has_meta_data_test.rb", "test/models/article.rb", "test/schema.rb", "test/test_helper.rb", "uninstall.rb"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/railsgarden/has_meta_data}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Has_meta_data", "--main", "README.rdoc"]
