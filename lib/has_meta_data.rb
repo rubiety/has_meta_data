@@ -67,3 +67,5 @@ module Rubiety
     end
   end
 end
+
+ActiveRecord::Base.send(:include, Rubiety::HasMetaData)
