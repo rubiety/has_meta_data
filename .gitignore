@@ -1,5 +1,4 @@
 *.sqlite3
-*.sqlite
 *.log
 Manifest
 pkg

@@ -8,9 +8,12 @@ In short, it's a transparent way of splitting up data into two tables while stil
 
 == Installation
   
-  # In environment.rb:
-  config.gem 'railsgarden-has_meta_data', :lib => 'has_meta_data', :source => 'http://gems.github.com'
+This gem works with Rails 3 only.
 
+In your Gemfile:
+  
+  gem "has_meta_data"
+  
 == Basic Example
 
   ## Database Schema
