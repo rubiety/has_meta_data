@@ -1,6 +1,0 @@
-== 1.0.0 Updated to Rails 3, RSpec
-
-* Converted tests to RSpec
-* Added support for Rails 3.0
-
-== 0.1.0 Initial Version
