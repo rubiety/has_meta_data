@@ -1,3 +1,5 @@
+{<img src="https://secure.travis-ci.org/rubiety/has_meta_data.png?branch=master" alt="Build Status" />}[http://travis-ci.org/rubiety/has_meta_data]
+
 == Has Meta Data
 
 This plugin allows you to extend one of your models with additional supplementary data stored in another table through a has_one relationship.  The benefit of this plugin over a simple has_one is that the meta model class is dynamically defined (though extendable via the has_meta_data declaration) and fields on the meta model are automatically delegated to from the main model, allowing you to work solely with your primary model and not worry about the storage of the data in a separate meta table.  This plugin also automatically handles creation of the meta model if you set a field on your model that exists in the meta model table.  
