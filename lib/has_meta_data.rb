@@ -22,8 +22,8 @@ module HasMetaData
           :foreign_key => meta_data_foreign_key,
           :dependent => :destroy
         
-        named_scope :with_meta, :include => [:meta], :conditions => "#{meta_data_table_name}.id IS NOT NULL"
-        named_scope :without_meta, :include => [:meta], :conditions => "#{meta_data_table_name}.id IS NULL"
+        scope :with_meta, includes(:meta).where("#{meta_data_table_name}.id IS NOT NULL")
+        scope :without_meta, includes(:meta).where("#{meta_data_table_name}.id IS NULL")
       end
       
       # Dynamically Create Model::Meta Class

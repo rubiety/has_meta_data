@@ -19,4 +19,10 @@ Gem::Specification.new do |s|
   
   s.add_dependency("activesupport", [">= 3.0.0"])
   s.add_dependency("activerecord", [">= 3.0.0"])
+  s.add_development_dependency("rspec", ["~> 2.0"])
+  s.add_development_dependency("factory_girl", ["~> 2.6.2"])
+  s.add_development_dependency("faker", ["~> 1.0.0"])
+  s.add_development_dependency("sqlite3", ["~> 1.3.4"])
+  s.add_development_dependency("rdoc", ["~> 3.12"])
+  s.add_development_dependency "rake"
 end
