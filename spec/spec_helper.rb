@@ -15,6 +15,8 @@ load(File.dirname(__FILE__) + "/db/schema.rb")
 
 require File.dirname(__FILE__) + '/../init'
 
+ActiveSupport::Deprecation.silenced = true
+
 # Example has_meta_data Model:
 class Article < ActiveRecord::Base
   has_meta_data

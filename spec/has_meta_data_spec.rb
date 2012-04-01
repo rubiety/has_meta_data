@@ -1,10 +1,6 @@
 require "spec_helper"
 
 describe HasMetaData do
-  before(:all) do
-    ActiveSupport::Deprecation.silenced = true
-  end
-
   context "Article model" do
     it "should expose #meta_data_class_name as Meta" do
       Article.meta_data_class_name.should == "Meta"
