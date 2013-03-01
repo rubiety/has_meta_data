@@ -22,8 +22,8 @@ module HasMetaData
           :foreign_key => meta_data_foreign_key,
           :dependent => :destroy
         
-        scope :with_meta, includes(:meta).where("#{meta_data_table_name}.id IS NOT NULL")
-        scope :without_meta, includes(:meta).where("#{meta_data_table_name}.id IS NULL")
+        scope :with_meta, lambda { includes(:meta).where("#{meta_data_table_name}.id IS NOT NULL") }
+        scope :without_meta, lambda { includes(:meta).where("#{meta_data_table_name}.id IS NULL") }
       end
       
       # Dynamically Create Model::Meta Class
@@ -31,7 +31,7 @@ module HasMetaData
       
       meta_data_class.cattr_accessor :original_class
       meta_data_class.original_class = self
-      meta_data_class.set_table_name(meta_data_table_name)
+      meta_data_class.table_name = meta_data_table_name
       
       # Draft Parent Association
       meta_data_class.belongs_to self.to_s.demodulize.underscore.to_sym, :class_name => "::#{self.to_s}", :foreign_key => meta_data_foreign_key
