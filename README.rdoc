@@ -1,4 +1,6 @@
 {<img src="https://secure.travis-ci.org/rubiety/has_meta_data.png?branch=master" alt="Build Status" />}[http://travis-ci.org/rubiety/has_meta_data]
+{<img src="https://gemnasium.com/rubiety/has_meta_data.png" alt="Dependency Status" />}[https://gemnasium.com/rubiety/has_meta_data]
+{<img src="https://codeclimate.com/github/rubiety/has_meta_data.png" />}[https://codeclimate.com/github/rubiety/has_meta_data]
 
 == Has Meta Data
 
@@ -87,6 +89,8 @@ context by passing a block to has_draft:
   end
 
 == Running Tests
+
+This gem uses appraisal to test with different versions of the dependencies. See Appraisal first for which versions are tested.
 
   # Just the gems locked in Gemfile.lock
   $ bundle exec rake test
