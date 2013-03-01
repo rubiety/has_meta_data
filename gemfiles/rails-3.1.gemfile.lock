@@ -1,7 +1,7 @@
 PATH
   remote: /Users/bhughes/Workspace/has_meta_data
   specs:
-    has_meta_data (1.0.0)
+    has_meta_data (1.1.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
 
